@@ -18,7 +18,7 @@
 		CCAD3A431EEF1038007F7BB8 /* RASETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAD3A421EEF1038007F7BB8 /* RASETests.swift */; };
 		CCAD3A4E1EEF1038007F7BB8 /* RASEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAD3A4D1EEF1038007F7BB8 /* RASEUITests.swift */; };
 		CCAD3A5C1EEF1B65007F7BB8 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAD3A5B1EEF1B65007F7BB8 /* DashboardViewController.swift */; };
-		CCE729401EF1A87C0071E1B0 /* NewAthleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7293F1EF1A87C0071E1B0 /* NewAthleteViewController.swift */; };
+		CCE729401EF1A87C0071E1B0 /* PackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7293F1EF1A87C0071E1B0 /* PackageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,7 @@
 		CCAD3A4D1EEF1038007F7BB8 /* RASEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RASEUITests.swift; sourceTree = "<group>"; };
 		CCAD3A4F1EEF1038007F7BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCAD3A5B1EEF1B65007F7BB8 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		CCE7293F1EF1A87C0071E1B0 /* NewAthleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAthleteViewController.swift; sourceTree = "<group>"; };
+		CCE7293F1EF1A87C0071E1B0 /* PackageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageViewController.swift; sourceTree = "<group>"; };
 		CF6A835633E7E7AF943FE078 /* Pods_RASE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RASE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC3416D0504646925A5810C3 /* Pods-RASETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RASETests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RASETests/Pods-RASETests.debug.xcconfig"; sourceTree = "<group>"; };
 		E3CE59789CE6A4D4BF2FA893 /* Pods-RASE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RASE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RASE/Pods-RASE.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 				CCAD3A361EEF1037007F7BB8 /* LaunchScreen.storyboard */,
 				CCAD3A391EEF1037007F7BB8 /* Info.plist */,
 				CCAD3A5B1EEF1B65007F7BB8 /* DashboardViewController.swift */,
-				CCE7293F1EF1A87C0071E1B0 /* NewAthleteViewController.swift */,
+				CCE7293F1EF1A87C0071E1B0 /* PackageViewController.swift */,
 			);
 			path = RASE;
 			sourceTree = "<group>";
@@ -452,7 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCE729401EF1A87C0071E1B0 /* NewAthleteViewController.swift in Sources */,
+				CCE729401EF1A87C0071E1B0 /* PackageViewController.swift in Sources */,
 				CCAD3A301EEF1037007F7BB8 /* LoginViewController.swift in Sources */,
 				CCAD3A5C1EEF1B65007F7BB8 /* DashboardViewController.swift in Sources */,
 				CCAD3A2E1EEF1037007F7BB8 /* AppDelegate.swift in Sources */,
