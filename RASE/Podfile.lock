@@ -1,0 +1,12 @@
+PODS:
+  - Stripe (9.4.0)
+
+DEPENDENCIES:
+  - Stripe
+
+SPEC CHECKSUMS:
+  Stripe: 0957cc85df5c3df153e6fb44d307ea4b778b6bd1
+
+PODFILE CHECKSUM: f2ddb5a3d5bd28fa5ac04d1c0713aa03397e9e1b
+
+COCOAPODS: 1.2.1

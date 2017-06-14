@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DE8080013BAC8BF09A1F609 /* Pods_RASEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB45B37B99DA8F2F1C8A5AB8 /* Pods_RASEUITests.framework */; };
+		6491F89586EAA54116ED1D85 /* Pods_RASETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805A20A5F3FF73DA4F5A099C /* Pods_RASETests.framework */; };
+		801C7E40005063264608F509 /* Pods_RASE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF6A835633E7E7AF943FE078 /* Pods_RASE.framework */; };
 		CCAD3A2E1EEF1037007F7BB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAD3A2D1EEF1037007F7BB8 /* AppDelegate.swift */; };
 		CCAD3A301EEF1037007F7BB8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAD3A2F1EEF1037007F7BB8 /* LoginViewController.swift */; };
 		CCAD3A331EEF1037007F7BB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCAD3A311EEF1037007F7BB8 /* Main.storyboard */; };
@@ -15,6 +18,7 @@
 		CCAD3A431EEF1038007F7BB8 /* RASETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAD3A421EEF1038007F7BB8 /* RASETests.swift */; };
 		CCAD3A4E1EEF1038007F7BB8 /* RASEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAD3A4D1EEF1038007F7BB8 /* RASEUITests.swift */; };
 		CCAD3A5C1EEF1B65007F7BB8 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAD3A5B1EEF1B65007F7BB8 /* DashboardViewController.swift */; };
+		CCE729401EF1A87C0071E1B0 /* NewAthleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7293F1EF1A87C0071E1B0 /* NewAthleteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		083EDD71005E6DA95828764B /* Pods-RASEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RASEUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RASEUITests/Pods-RASEUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		41BA0FC0B613C3B200212232 /* Pods-RASETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RASETests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RASETests/Pods-RASETests.release.xcconfig"; sourceTree = "<group>"; };
+		7F264A58B37B8D0900DA227B /* Pods-RASE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RASE.release.xcconfig"; path = "Pods/Target Support Files/Pods-RASE/Pods-RASE.release.xcconfig"; sourceTree = "<group>"; };
+		805A20A5F3FF73DA4F5A099C /* Pods_RASETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RASETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B34FF1BA7206E076837FAB53 /* Pods-RASEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RASEUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RASEUITests/Pods-RASEUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CCAD3A2A1EEF1037007F7BB8 /* RASE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RASE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCAD3A2D1EEF1037007F7BB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCAD3A2F1EEF1037007F7BB8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +58,11 @@
 		CCAD3A4D1EEF1038007F7BB8 /* RASEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RASEUITests.swift; sourceTree = "<group>"; };
 		CCAD3A4F1EEF1038007F7BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCAD3A5B1EEF1B65007F7BB8 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		CCE7293F1EF1A87C0071E1B0 /* NewAthleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAthleteViewController.swift; sourceTree = "<group>"; };
+		CF6A835633E7E7AF943FE078 /* Pods_RASE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RASE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC3416D0504646925A5810C3 /* Pods-RASETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RASETests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RASETests/Pods-RASETests.debug.xcconfig"; sourceTree = "<group>"; };
+		E3CE59789CE6A4D4BF2FA893 /* Pods-RASE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RASE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RASE/Pods-RASE.debug.xcconfig"; sourceTree = "<group>"; };
+		FB45B37B99DA8F2F1C8A5AB8 /* Pods_RASEUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RASEUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				801C7E40005063264608F509 /* Pods_RASE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6491F89586EAA54116ED1D85 /* Pods_RASETests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +86,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DE8080013BAC8BF09A1F609 /* Pods_RASEUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3050A12F4DD216A1CB2915D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E3CE59789CE6A4D4BF2FA893 /* Pods-RASE.debug.xcconfig */,
+				7F264A58B37B8D0900DA227B /* Pods-RASE.release.xcconfig */,
+				DC3416D0504646925A5810C3 /* Pods-RASETests.debug.xcconfig */,
+				41BA0FC0B613C3B200212232 /* Pods-RASETests.release.xcconfig */,
+				083EDD71005E6DA95828764B /* Pods-RASEUITests.debug.xcconfig */,
+				B34FF1BA7206E076837FAB53 /* Pods-RASEUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A197A34D132D80A43A454891 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF6A835633E7E7AF943FE078 /* Pods_RASE.framework */,
+				805A20A5F3FF73DA4F5A099C /* Pods_RASETests.framework */,
+				FB45B37B99DA8F2F1C8A5AB8 /* Pods_RASEUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CCAD3A211EEF1037007F7BB8 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +123,8 @@
 				CCAD3A411EEF1038007F7BB8 /* RASETests */,
 				CCAD3A4C1EEF1038007F7BB8 /* RASEUITests */,
 				CCAD3A2B1EEF1037007F7BB8 /* Products */,
+				3050A12F4DD216A1CB2915D9 /* Pods */,
+				A197A34D132D80A43A454891 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +148,7 @@
 				CCAD3A361EEF1037007F7BB8 /* LaunchScreen.storyboard */,
 				CCAD3A391EEF1037007F7BB8 /* Info.plist */,
 				CCAD3A5B1EEF1B65007F7BB8 /* DashboardViewController.swift */,
+				CCE7293F1EF1A87C0071E1B0 /* NewAthleteViewController.swift */,
 			);
 			path = RASE;
 			sourceTree = "<group>";
@@ -135,9 +178,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCAD3A521EEF1038007F7BB8 /* Build configuration list for PBXNativeTarget "RASE" */;
 			buildPhases = (
+				ED974E7028A6066D39EE3368 /* [CP] Check Pods Manifest.lock */,
 				CCAD3A261EEF1037007F7BB8 /* Sources */,
 				CCAD3A271EEF1037007F7BB8 /* Frameworks */,
 				CCAD3A281EEF1037007F7BB8 /* Resources */,
+				AB1EA0EB341114D2A4196750 /* [CP] Embed Pods Frameworks */,
+				DD15B9412985627841B38170 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCAD3A551EEF1038007F7BB8 /* Build configuration list for PBXNativeTarget "RASETests" */;
 			buildPhases = (
+				9D89F6DAF341634F377C6667 /* [CP] Check Pods Manifest.lock */,
 				CCAD3A3A1EEF1038007F7BB8 /* Sources */,
 				CCAD3A3B1EEF1038007F7BB8 /* Frameworks */,
 				CCAD3A3C1EEF1038007F7BB8 /* Resources */,
+				D4E36CB303833EC9B0EF262E /* [CP] Embed Pods Frameworks */,
+				E4DD1560FDAF836CB2A236FF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +219,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCAD3A581EEF1038007F7BB8 /* Build configuration list for PBXNativeTarget "RASEUITests" */;
 			buildPhases = (
+				4F259C6B6FB9A92660ED800E /* [CP] Check Pods Manifest.lock */,
 				CCAD3A451EEF1038007F7BB8 /* Sources */,
 				CCAD3A461EEF1038007F7BB8 /* Frameworks */,
 				CCAD3A471EEF1038007F7BB8 /* Resources */,
+				84E54224338058728E8FA7ED /* [CP] Embed Pods Frameworks */,
+				482845090D36D6C8ECD62945 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,11 +309,150 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		482845090D36D6C8ECD62945 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RASEUITests/Pods-RASEUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F259C6B6FB9A92660ED800E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		84E54224338058728E8FA7ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RASEUITests/Pods-RASEUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D89F6DAF341634F377C6667 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AB1EA0EB341114D2A4196750 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RASE/Pods-RASE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4E36CB303833EC9B0EF262E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RASETests/Pods-RASETests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD15B9412985627841B38170 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RASE/Pods-RASE-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4DD1560FDAF836CB2A236FF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RASETests/Pods-RASETests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED974E7028A6066D39EE3368 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CCAD3A261EEF1037007F7BB8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCE729401EF1A87C0071E1B0 /* NewAthleteViewController.swift in Sources */,
 				CCAD3A301EEF1037007F7BB8 /* LoginViewController.swift in Sources */,
 				CCAD3A5C1EEF1B65007F7BB8 /* DashboardViewController.swift in Sources */,
 				CCAD3A2E1EEF1037007F7BB8 /* AppDelegate.swift in Sources */,
@@ -414,6 +605,7 @@
 		};
 		CCAD3A531EEF1038007F7BB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3CE59789CE6A4D4BF2FA893 /* Pods-RASE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RASE/Info.plist;
@@ -426,6 +618,7 @@
 		};
 		CCAD3A541EEF1038007F7BB8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F264A58B37B8D0900DA227B /* Pods-RASE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RASE/Info.plist;
@@ -438,6 +631,7 @@
 		};
 		CCAD3A561EEF1038007F7BB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC3416D0504646925A5810C3 /* Pods-RASETests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -452,6 +646,7 @@
 		};
 		CCAD3A571EEF1038007F7BB8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41BA0FC0B613C3B200212232 /* Pods-RASETests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -466,6 +661,7 @@
 		};
 		CCAD3A591EEF1038007F7BB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 083EDD71005E6DA95828764B /* Pods-RASEUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = RASEUITests/Info.plist;
@@ -479,6 +675,7 @@
 		};
 		CCAD3A5A1EEF1038007F7BB8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B34FF1BA7206E076837FAB53 /* Pods-RASEUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = RASEUITests/Info.plist;
@@ -509,6 +706,7 @@
 				CCAD3A541EEF1038007F7BB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CCAD3A551EEF1038007F7BB8 /* Build configuration list for PBXNativeTarget "RASETests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +715,7 @@
 				CCAD3A571EEF1038007F7BB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CCAD3A581EEF1038007F7BB8 /* Build configuration list for PBXNativeTarget "RASEUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +724,7 @@
 				CCAD3A5A1EEF1038007F7BB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
