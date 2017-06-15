@@ -13,9 +13,46 @@ class PackageViewController: UITableViewController {
     
     // MARK: Properties
     
+    // JSON Object with available packages -> Would pull from backend
+    var payload =
+        [
+            "packages":
+            [
+                [
+                    "name": "Basic Training Package",
+                    "description": "$29.95\n \t• 3-Week program\n\t• Experienced coach monitoring your progress\n\t• Tailored performance drills on a weekly basis",
+                    "image":"Basic Package"
+                ],
+                [
+                    "name": "Premium Training Package",
+                    "description":"$59.95\n \t• 6-week program\n\t• Experienced coach that monitors progress\n\t• Tailored performance drills on a weekly basis\n\t• Game film analysis and feedback provided by coaches\n\t• Constant contact with the assigned coach",
+                    "image":"Premium Package"
+                ]
+            ]
+        ]
+    
+    // Will be used in final application, above is just for testing
+    var packages: [[String: Any]] = []
+    var packageAmount = 0
+    var packagesLoaded = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Load any saved notes
+        
+        do{
+            let jsonData = try JSONSerialization.data(withJSONObject: payload, options: [])
+            let json = try JSONSerialization.jsonObject(with: jsonData, options: [])  as? [String: Any]
+            packages = json?["packages"] as! [[String: Any]]
+            packageAmount = 0
+            for packs in packages
+            {
+                if let _ = packs["name"] as? String {
+                    packageAmount += 1
+                }
+            }
+        } catch{
+            print("ERROR")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -31,9 +68,8 @@ class PackageViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return packageAmount
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,9 +78,22 @@ class PackageViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cellIdentifier = "PackageViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PackageViewCell else {
             fatalError("The dequeued cell is not an instance of PackageViewCell.")
+        }
+        if(packagesLoaded < packageAmount)
+        {
+            print(packagesLoaded)
+            let currentPackage = packages[packagesLoaded] as [String: Any]
+            print(currentPackage)
+            cell.packageTitle.text = currentPackage["name"] as? String
+            cell.packageDescription.text = currentPackage["description"] as? String
+            cell.packageImage.image = UIImage(named: currentPackage["image"] as! String)
+            cell.packageDescription.setContentOffset(CGPoint.zero, animated: false)
+            
+            packagesLoaded += 1
         }
         
         return cell

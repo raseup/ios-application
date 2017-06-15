@@ -16,10 +16,12 @@ class PackageViewCell: UITableViewCell {
     @IBOutlet weak var packageDescription: UITextView!
     @IBOutlet weak var packageQuantity: UITextField!
     @IBOutlet weak var packageStepper: UIStepper!
+    @IBOutlet weak var packageImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
