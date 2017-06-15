@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class PackageTableViewController: UITableViewController {
+class PackageViewController: UITableViewController {
     
     // MARK: Properties
     
@@ -37,7 +37,7 @@ class PackageTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return notes.count
+        return 1
     }
     
     
@@ -46,11 +46,6 @@ class PackageTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PackageViewCell else {
             fatalError("The dequeued cell is not an instance of PackageViewCell.")
         }
-        
-        // Fetches appropriate note
-        let note = notes[indexPath.row]
-        
-        cell.titleLabel.text = note.title
         
         return cell
     }
