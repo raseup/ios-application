@@ -33,10 +33,14 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5M-39-qHC">
                                         <rect key="frame" x="0.0" y="0.0" width="183.5" height="100"/>
+                                        <color key="backgroundColor" red="0.94112237002265364" green="0.98148073186528495" blue="0.45617417584802022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="JOIN NOW">
                                             <color key="titleColor" red="0.16701748704663211" green="0.16701748704663211" blue="0.16701748704663211" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="zfe-t0-E9U" kind="show" id="MSc-tE-PpV"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2D-Bv-ekF">
                                         <rect key="frame" x="183.5" y="0.0" width="8.5" height="100"/>
@@ -46,6 +50,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gh-0C-jvU">
                                         <rect key="frame" x="192" y="0.0" width="183" height="100"/>
+                                        <color key="backgroundColor" red="0.9439946631528654" green="0.98447619818652854" blue="0.45756641344984955" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="LOG IN">
                                             <color key="titleColor" red="0.15718102331606221" green="0.15718102331606221" blue="0.15718102331606221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -85,7 +90,7 @@
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="C8A-FK-H4M" customClass="LandingPageViewController" customModule="RASE" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                 </pageViewController>
@@ -109,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EMS-Da-pj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2377" y="892"/>
+            <point key="canvasLocation" x="-2378" y="1638"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="s1i-5b-iYV">
@@ -127,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D0A-MY-J1W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1677" y="896"/>
+            <point key="canvasLocation" x="-1679" y="1638"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="KoF-Yy-rxT">
@@ -145,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yg1-U8-cpd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-973" y="896"/>
+            <point key="canvasLocation" x="-988" y="1638"/>
         </scene>
         <!--LoginViewController-->
         <scene sceneID="tne-QT-ifu">
@@ -159,124 +164,145 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r6n-wH-xGi">
-                                <rect key="frame" x="32" y="141" width="312" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RASE Icon" translatesAutoresizingMaskIntoConstraints="NO" id="fZJ-gB-P4C">
-                                <rect key="frame" x="153" y="14" width="68" height="95"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RASE Icon" translatesAutoresizingMaskIntoConstraints="NO" id="fZJ-gB-P4C">
+                                <rect key="frame" x="150" y="35" width="75" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="9w9-KO-cSO"/>
+                                    <constraint firstAttribute="height" constant="100" id="DPZ-aB-H8h"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OW-Vr-ex0">
-                                <rect key="frame" x="-123" y="360" width="133" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imy-iM-ewV">
-                                <rect key="frame" x="31" y="302" width="312" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.18946324481865284" green="0.18946324481865284" blue="0.18946324481865284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="LOG IN">
-                                    <color key="titleColor" red="0.9981379533678757" green="0.9981379533678757" blue="0.9981379533678757" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0m-hg-sGL">
+                                <rect key="frame" x="320" y="40" width="30" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="726-zJ-LcA"/>
+                                    <constraint firstAttribute="width" constant="30" id="nwW-fa-WnE"/>
+                                </constraints>
+                                <state key="normal" title="X" image="Dismiss Button">
+                                    <color key="titleColor" red="0.18017325129533679" green="0.18017325129533679" blue="0.18017325129533679" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="TSJ-5u-0AO" kind="presentation" modalTransitionStyle="flipHorizontal" id="Td2-Lx-YQo"/>
+                                    <action selector="closeLoginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vEr-Oy-AAy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Not a member?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45H-AQ-G3N">
-                                <rect key="frame" x="138" y="395" width="68" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                <color key="textColor" red="0.52865932640000002" green="0.52865932640000002" blue="0.52865932640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuD-HO-Ul3">
-                                <rect key="frame" x="198" y="397" width="41" height="10"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                <state key="normal" title="Join now.">
-                                    <color key="titleColor" red="0.52865932640000002" green="0.52865932640000002" blue="0.52865932640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="YdQ-zS-sNX" kind="show" id="AlX-4k-jaJ"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RASE YOUR GAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWR-FE-pxj">
-                                <rect key="frame" x="106" y="90" width="163" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pu2-On-wj9">
+                                <rect key="frame" x="127.5" y="399.5" width="119" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not a member?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45H-AQ-G3N">
+                                        <rect key="frame" x="0.0" y="0.0" width="74" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.52865932640000002" green="0.52865932640000002" blue="0.52865932640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuD-HO-Ul3">
+                                        <rect key="frame" x="74" y="0.0" width="45" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <state key="normal" title="Join now.">
+                                            <color key="titleColor" red="0.52865932640000002" green="0.52865932640000002" blue="0.52865932640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="zfe-t0-E9U" kind="show" id="Gyf-db-d2L"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RASE YOUR GAME" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWR-FE-pxj">
+                                <rect key="frame" x="108" y="120" width="159.5" height="21.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gQa-3z-y5T">
-                                <rect key="frame" x="32" y="192" width="312" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r6n-wH-xGi">
+                                <rect key="frame" x="31" y="166.5" width="313" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gQa-3z-y5T">
+                                <rect key="frame" x="31" y="211.5" width="313" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l50-dd-Bxl">
-                                <rect key="frame" x="270" y="230" width="74" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l50-dd-Bxl">
+                                <rect key="frame" x="258" y="246.5" width="86" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <state key="normal" title="Forgot Password?">
                                     <color key="titleColor" red="0.52865932642487046" green="0.52865932642487046" blue="0.52865932642487046" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By logging in, you agree to RASE's " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="My8-47-KfO">
-                                <rect key="frame" x="43" y="260" width="172" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="8"/>
-                                <color key="textColor" red="0.84267729922279799" green="0.7458833951180952" blue="0.11616039426195096" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7h-b7-1SA">
-                                <rect key="frame" x="185" y="262" width="70" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="8"/>
-                                <state key="normal" title="Privacy Policy">
-                                    <color key="titleColor" red="0.84267729920000001" green="0.74588339510000001" blue="0.1161603943" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BHI-c6-iS3">
+                                <rect key="frame" x="18" y="295.5" width="339" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By logging in, you agree to RASE's " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="My8-47-KfO">
+                                        <rect key="frame" x="0.0" y="0.0" width="178.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                        <color key="textColor" red="0.84267729922279799" green="0.7458833951180952" blue="0.11616039426195096" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7h-b7-1SA">
+                                        <rect key="frame" x="178.5" y="0.0" width="73" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                        <state key="normal" title="Privacy Policy">
+                                            <color key="titleColor" red="0.84267729920000001" green="0.74588339510000001" blue="0.1161603943" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTI-9e-DGP">
+                                        <rect key="frame" x="251.5" y="0.0" width="19.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                        <color key="textColor" red="0.84267729920000001" green="0.74588339510000001" blue="0.1161603943" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t28-FQ-p2r">
+                                        <rect key="frame" x="271" y="0.0" width="68" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                        <state key="normal" title="Terms of Use">
+                                            <color key="titleColor" red="0.84267729920000001" green="0.74588339510000001" blue="0.1161603943" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imy-iM-ewV">
+                                <rect key="frame" x="31" y="339.5" width="313" height="40"/>
+                                <color key="backgroundColor" red="0.18946324481865284" green="0.18946324481865284" blue="0.18946324481865284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Aik-YQ-Uj8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="LOG IN">
+                                    <color key="titleColor" red="0.9981379533678757" green="0.9981379533678757" blue="0.9981379533678757" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t28-FQ-p2r">
-                                <rect key="frame" x="263" y="262" width="69" height="16"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="8"/>
-                                <state key="normal" title="Terms of Use">
-                                    <color key="titleColor" red="0.84267729920000001" green="0.74588339510000001" blue="0.1161603943" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="and" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTI-9e-DGP">
-                                <rect key="frame" x="252" y="260" width="23" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="8"/>
-                                <color key="textColor" red="0.84267729920000001" green="0.74588339510000001" blue="0.1161603943" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0m-hg-sGL">
-                                <rect key="frame" x="313" y="20" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="X">
-                                    <color key="titleColor" red="0.18017325129533679" green="0.18017325129533679" blue="0.18017325129533679" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="cjI-nO-ckN" kind="show" id="SGL-iT-h81"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Imy-iM-ewV" secondAttribute="trailing" constant="15" id="6of-rm-tRm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="r6n-wH-xGi" secondAttribute="trailing" constant="15" id="BK9-cC-AfF"/>
+                            <constraint firstItem="Imy-iM-ewV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="HJI-HP-QJd"/>
+                            <constraint firstItem="iWR-FE-pxj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JWx-ia-rpi"/>
+                            <constraint firstItem="gQa-3z-y5T" firstAttribute="top" secondItem="r6n-wH-xGi" secondAttribute="bottom" constant="15" id="Mh9-bW-G9g"/>
+                            <constraint firstItem="pu2-On-wj9" firstAttribute="top" secondItem="Imy-iM-ewV" secondAttribute="bottom" constant="20" id="Nag-hv-KFb"/>
+                            <constraint firstAttribute="trailing" secondItem="X0m-hg-sGL" secondAttribute="trailing" constant="25" id="PMs-Ye-FRH"/>
+                            <constraint firstItem="BHI-c6-iS3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TOo-ea-01y"/>
+                            <constraint firstItem="Imy-iM-ewV" firstAttribute="top" secondItem="BHI-c6-iS3" secondAttribute="bottom" constant="20" id="XCV-eK-jNx"/>
+                            <constraint firstItem="iWR-FE-pxj" firstAttribute="top" secondItem="fZJ-gB-P4C" secondAttribute="bottom" constant="-15" id="ZX2-sF-adt"/>
+                            <constraint firstItem="r6n-wH-xGi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="huy-rc-O0b"/>
+                            <constraint firstItem="fZJ-gB-P4C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jqq-50-tBF"/>
+                            <constraint firstItem="gQa-3z-y5T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="lu3-Ds-xpx"/>
+                            <constraint firstItem="pu2-On-wj9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n50-Kx-5LB"/>
+                            <constraint firstItem="X0m-hg-sGL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="nKW-kY-qaa"/>
+                            <constraint firstItem="l50-dd-Bxl" firstAttribute="top" secondItem="gQa-3z-y5T" secondAttribute="bottom" constant="5" id="nex-LI-cOQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gQa-3z-y5T" secondAttribute="trailing" constant="15" id="oOr-5z-R5R"/>
+                            <constraint firstItem="gQa-3z-y5T" firstAttribute="top" secondItem="r6n-wH-xGi" secondAttribute="bottom" constant="15" id="p4E-fR-shl"/>
+                            <constraint firstItem="BHI-c6-iS3" firstAttribute="top" secondItem="l50-dd-Bxl" secondAttribute="bottom" constant="25" id="ufF-XJ-VaC"/>
+                            <constraint firstItem="r6n-wH-xGi" firstAttribute="top" secondItem="iWR-FE-pxj" secondAttribute="bottom" constant="25" id="xQb-VM-pb5"/>
+                            <constraint firstItem="fZJ-gB-P4C" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="xpm-s8-ibU"/>
+                            <constraint firstItem="l50-dd-Bxl" firstAttribute="trailing" secondItem="gQa-3z-y5T" secondAttribute="trailing" id="yT3-cy-RbU"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="149.59999999999999" y="-310.79460269865069"/>
+            <point key="canvasLocation" x="-570" y="-312"/>
         </scene>
         <!--Dashboard View Controller-->
         <scene sceneID="QSh-gv-PTv">
@@ -296,11 +322,7 @@
                                 <color key="barTintColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <navigationItem title="RASE Your Game" id="cC0-oa-alo">
-                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="BFn-am-w7F">
-                                            <connections>
-                                                <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="flipHorizontal" id="OAG-w2-ugS"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="BFn-am-w7F"/>
                                         <barButtonItem key="rightBarButtonItem" title="Settings" id="QT4-2T-9VD"/>
                                     </navigationItem>
                                 </items>
@@ -464,9 +486,6 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbJ-8q-4Kl">
                                                     <rect key="frame" x="0.0" y="250" width="375" height="49.5"/>
                                                     <state key="normal" title="Purchase"/>
-                                                    <connections>
-                                                        <segue destination="zfe-t0-E9U" kind="show" id="TdY-bz-wQS"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -500,16 +519,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Package Options" id="jtQ-2u-hJl">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="y0S-I9-Nvl">
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="bw5-I9-Zme"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="y0S-I9-Nvl"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="22d-zb-aCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1087" y="555"/>
+            <point key="canvasLocation" x="1652" y="555"/>
         </scene>
         <!--New Athlete View Controller-->
         <scene sceneID="GRk-Y4-cMO">
@@ -765,11 +780,7 @@
                                 <rect key="frame" x="0.0" y="28" width="531" height="44"/>
                                 <items>
                                     <navigationItem title="Athlete Information" id="Qf4-PG-amS">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="tl9-gr-HLn">
-                                            <connections>
-                                                <segue destination="7yn-LM-IgB" kind="show" id="5j2-HW-X4f"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="tl9-gr-HLn"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -813,7 +824,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsj-qk-bKj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2423" y="555"/>
+            <point key="canvasLocation" x="-570" y="429"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R6y-D1-eFK">
@@ -831,15 +842,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnS-Uu-tyl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="151" y="555"/>
+            <point key="canvasLocation" x="929" y="555"/>
         </scene>
     </scenes>
     <resources>
         <image name="Basic Package" width="250" height="166"/>
+        <image name="Dismiss Button" width="258" height="237"/>
         <image name="RASE Icon" width="344" height="421"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mOY-Ac-qxF"/>
-        <segue reference="5j2-HW-X4f"/>
+        <segue reference="MSc-tE-PpV"/>
     </inferredMetricsTieBreakers>
 </document>

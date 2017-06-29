@@ -20,6 +20,9 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func closeLoginButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
 }
 
