@@ -67,26 +67,33 @@
                                     <constraint firstAttribute="height" constant="75" id="gbK-qK-Ytm"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RASE Icon" translatesAutoresizingMaskIntoConstraints="NO" id="pgM-aE-2at">
-                                <rect key="frame" x="67" y="178" width="240" height="310"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RASE Icon" translatesAutoresizingMaskIntoConstraints="NO" id="pgM-aE-2at">
+                                <rect key="frame" x="15" y="122.5" width="344" height="421"/>
                                 <color key="backgroundColor" red="0.067132469698592323" green="0.23955389812819172" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ajw-qR-hOg">
+                                <rect key="frame" x="168" y="545" width="39" height="37"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="0RY-Gk-EGu" secondAttribute="trailing" id="EY3-jp-cqL"/>
                             <constraint firstItem="PDF-Eo-0hD" firstAttribute="top" secondItem="61E-5g-jhU" secondAttribute="bottom" id="JmD-9g-1P9"/>
                             <constraint firstItem="0RY-Gk-EGu" firstAttribute="leading" secondItem="rEB-4q-YIA" secondAttribute="leading" id="L75-st-q4l"/>
+                            <constraint firstItem="61E-5g-jhU" firstAttribute="top" secondItem="Ajw-qR-hOg" secondAttribute="bottom" constant="10" id="Ohf-uh-JY1"/>
+                            <constraint firstItem="Ajw-qR-hOg" firstAttribute="centerX" secondItem="0RY-Gk-EGu" secondAttribute="centerX" id="T5A-Gy-sPV"/>
                             <constraint firstItem="61E-5g-jhU" firstAttribute="top" secondItem="0RY-Gk-EGu" secondAttribute="bottom" id="VEO-Yo-VBB"/>
                             <constraint firstItem="61E-5g-jhU" firstAttribute="leading" secondItem="0RY-Gk-EGu" secondAttribute="leading" id="XQJ-W1-GoJ"/>
+                            <constraint firstItem="pgM-aE-2at" firstAttribute="centerY" secondItem="rEB-4q-YIA" secondAttribute="centerY" id="XQx-Rf-7Jk"/>
                             <constraint firstItem="0RY-Gk-EGu" firstAttribute="top" secondItem="rEB-4q-YIA" secondAttribute="top" constant="20" id="gDf-XD-OL1"/>
                             <constraint firstItem="0RY-Gk-EGu" firstAttribute="width" secondItem="rEB-4q-YIA" secondAttribute="width" id="gx5-g3-pyF"/>
+                            <constraint firstItem="pgM-aE-2at" firstAttribute="centerX" secondItem="rEB-4q-YIA" secondAttribute="centerX" id="v6R-VM-SVw"/>
                             <constraint firstItem="61E-5g-jhU" firstAttribute="width" secondItem="rEB-4q-YIA" secondAttribute="width" id="xlG-uT-hJa"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="pageContainerView" destination="0RY-Gk-EGu" id="yL6-eL-Vld"/>
+                        <outlet property="pageControl" destination="Ajw-qR-hOg" id="lUr-h9-RDW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYl-Xo-xeF" userLabel="First Responder" sceneMemberID="firstResponder"/>

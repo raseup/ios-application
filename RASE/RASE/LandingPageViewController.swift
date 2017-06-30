@@ -8,7 +8,7 @@
 
 import UIKit
 
-private(set) var orderedViewControllers: [UIViewController] = {
+var orderedViewControllers: [UIViewController] = {
     return [UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Green"),
             UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Red"),
             UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Blue")]
@@ -16,6 +16,7 @@ private(set) var orderedViewControllers: [UIViewController] = {
 
 class LandingPageViewController: UIPageViewController {
     
+    var newIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,50 +42,44 @@ extension LandingPageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
+            print("Nil 1")
             return nil
         }
         
-        let previousIndex = viewControllerIndex-1
-        guard previousIndex >= 0 else {
-            return orderedViewControllers.last
+        var previousIndex = viewControllerIndex-1
+        if previousIndex < 0 {
+            previousIndex = orderedViewControllers.count - 1
         }
         
         guard orderedViewControllers.count > previousIndex else {
+            print("Nil 2")
             return nil
         }
-        
+        print("Setting to \(previousIndex)")
+        pageControlGlobal!.currentPage = previousIndex
         return orderedViewControllers[previousIndex]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
+            print("Nil 3")
             return nil
         }
         
-        let nextIndex = viewControllerIndex+1
+        var nextIndex = viewControllerIndex+1
         let orderedViewControllersCount = orderedViewControllers.count
         
-        guard orderedViewControllersCount != nextIndex else {
-            return orderedViewControllers.first
+        if orderedViewControllersCount == nextIndex {
+            nextIndex = 0
         }
         
         guard orderedViewControllersCount > nextIndex else {
+            print("Nil 4")
             return nil
         }
-        
+        print("Setting to \(nextIndex)")
+        pageControlGlobal!.currentPage = nextIndex
         return orderedViewControllers[nextIndex]
     }
-    
-   /* func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return orderedViewControllers.count
-    }
-    
-    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        guard let firstViewController = viewControllers?.first, let firstViewControllerIndex = orderedViewControllers.index(of: firstViewController) else {
-            return 0
-        }
-        
-        return firstViewControllerIndex
-    }*/
 }
