@@ -26,6 +26,7 @@ class LandingPageViewController: UIPageViewController {
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -75,7 +76,7 @@ extension LandingPageViewController: UIPageViewControllerDataSource {
         return orderedViewControllers[nextIndex]
     }
     
-    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+   /* func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return orderedViewControllers.count
     }
     
@@ -85,5 +86,5 @@ extension LandingPageViewController: UIPageViewControllerDataSource {
         }
         
         return firstViewControllerIndex
-    }
+    }*/
 }

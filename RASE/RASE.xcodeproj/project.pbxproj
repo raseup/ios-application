@@ -21,6 +21,7 @@
 		CCAD3A4E1EEF1038007F7BB8 /* RASEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAD3A4D1EEF1038007F7BB8 /* RASEUITests.swift */; };
 		CCAD3A5C1EEF1B65007F7BB8 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAD3A5B1EEF1B65007F7BB8 /* DashboardViewController.swift */; };
 		CCDAF29E1F0544050066E6DE /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDAF29D1F0544050066E6DE /* LandingPageViewController.swift */; };
+		CCDAF2A01F06D2900066E6DE /* LandingPageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDAF29F1F06D2900066E6DE /* LandingPageMainViewController.swift */; };
 		CCE729401EF1A87C0071E1B0 /* PackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7293F1EF1A87C0071E1B0 /* PackageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		CCAD3A4F1EEF1038007F7BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCAD3A5B1EEF1B65007F7BB8 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		CCDAF29D1F0544050066E6DE /* LandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
+		CCDAF29F1F06D2900066E6DE /* LandingPageMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageMainViewController.swift; sourceTree = "<group>"; };
 		CCE7293F1EF1A87C0071E1B0 /* PackageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageViewController.swift; sourceTree = "<group>"; };
 		CF6A835633E7E7AF943FE078 /* Pods_RASE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RASE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC3416D0504646925A5810C3 /* Pods-RASETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RASETests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RASETests/Pods-RASETests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				CC6973641EF23D3A00E1D494 /* PackageViewCell.swift */,
 				CC6973661EF2FC0500E1D494 /* NewAthleteViewController.swift */,
 				CCDAF29D1F0544050066E6DE /* LandingPageViewController.swift */,
+				CCDAF29F1F06D2900066E6DE /* LandingPageMainViewController.swift */,
 			);
 			path = RASE;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				CC6973651EF23D3A00E1D494 /* PackageViewCell.swift in Sources */,
 				CCDAF29E1F0544050066E6DE /* LandingPageViewController.swift in Sources */,
 				CCAD3A301EEF1037007F7BB8 /* LoginViewController.swift in Sources */,
+				CCDAF2A01F06D2900066E6DE /* LandingPageMainViewController.swift in Sources */,
 				CCAD3A5C1EEF1B65007F7BB8 /* DashboardViewController.swift in Sources */,
 				CCAD3A2E1EEF1037007F7BB8 /* AppDelegate.swift in Sources */,
 				CC6973671EF2FC0500E1D494 /* NewAthleteViewController.swift in Sources */,
