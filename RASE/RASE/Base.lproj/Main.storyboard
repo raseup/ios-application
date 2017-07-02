@@ -701,7 +701,7 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVq-LB-p7l">
                                         <rect key="frame" x="15" y="561.5" width="345" height="36"/>
-                                        <color key="backgroundColor" red="0.52865932640000002" green="0.52865932640000002" blue="0.52865932640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                         <state key="normal" title="Create Account">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -800,6 +800,6 @@
         <image name="RASE Icon" width="344" height="421"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MSc-tE-PpV"/>
+        <segue reference="Gyf-db-d2L"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,7 +14,7 @@ var orderedViewControllers: [UIViewController] = {
             UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Blue")]
 }()
 
-class LandingPageViewController: UIPageViewController {
+class LandingPageViewController: UIPageViewController, UIPageViewControllerDelegate {
     
     var newIndex: Int = 0
     
@@ -23,6 +23,7 @@ class LandingPageViewController: UIPageViewController {
         // Do any additional setup after loading the view, typically from a nib.
 
         dataSource = self
+        delegate = self
         
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
@@ -39,10 +40,15 @@ class LandingPageViewController: UIPageViewController {
 
 extension LandingPageViewController: UIPageViewControllerDataSource {
     
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController],transitionCompleted completed: Bool) {
+        
+        let viewControllerIndex = orderedViewControllers.index(of: self.viewControllers![0])
+        pageControlGlobal!.currentPage = viewControllerIndex!
+    }
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
-            print("Nil 1")
             return nil
         }
         
@@ -52,18 +58,15 @@ extension LandingPageViewController: UIPageViewControllerDataSource {
         }
         
         guard orderedViewControllers.count > previousIndex else {
-            print("Nil 2")
             return nil
         }
-        print("Setting to \(previousIndex)")
-        pageControlGlobal!.currentPage = previousIndex
+        
         return orderedViewControllers[previousIndex]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
-            print("Nil 3")
             return nil
         }
         
@@ -75,11 +78,9 @@ extension LandingPageViewController: UIPageViewControllerDataSource {
         }
         
         guard orderedViewControllersCount > nextIndex else {
-            print("Nil 4")
             return nil
         }
-        print("Setting to \(nextIndex)")
-        pageControlGlobal!.currentPage = nextIndex
+        
         return orderedViewControllers[nextIndex]
     }
 }
