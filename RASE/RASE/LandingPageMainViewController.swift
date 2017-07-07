@@ -27,6 +27,14 @@ class LandingPageMainViewController: UIViewController {
         pageControlGlobal = pageControl
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        // if logged in, dismiss
+        if false {
+            self.dismiss(animated: false, completion: nil)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
