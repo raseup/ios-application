@@ -16,6 +16,15 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        /*
+        NotLoggedInContainer.isHidden = true
+        LoggedInContainer.isHidden = false
+        */
+        
+        
+        NotLoggedInContainer.isHidden = false
+        LoggedInContainer.isHidden = true
+        
     }
     
     override func didReceiveMemoryWarning() {

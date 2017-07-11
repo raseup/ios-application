@@ -118,7 +118,6 @@ class LoginViewController: UIViewController {
          self.spinner.stopAnimating()
          self.present(self.alert, animated: true)
         }
-        print("Login Failure")
     }
     
     func successHandler() -> Void {

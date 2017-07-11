@@ -1,0 +1,27 @@
+{
+    "data": {
+        "id": 1,
+        "fullName": "Sam Beaulieu",
+        "email": "bseaam@gmail.com",
+        "quote": "RASE Your Game Today",
+        "drills": [
+                    {
+                    "name": "Diagonal Lane Slides",
+                    "description": "This is a description for the video. Look at how cool it looks on the application! Dripple dribble dribble the ball etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. ",
+                    "url": "https://www.youtube.com/embed/CyXbGjbsxdE"
+                    },
+                   {
+                   "name": "Tennis Ball Cone Behind the Back",
+                   "description": "This is a description for the video. Look at how cool it looks on the application! Dripple dribble dribble the ball etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. ",
+                   "url": "https://www.youtube.com/embed/CyXbGjbsxdE"
+                   },
+                   {
+                   "name": "Windshield Wiper - Between the Legs Pull Up",
+                   "description": "This is a description for the video. Look at how cool it looks on the application! Dripple dribble dribble the ball etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. ",
+                   "url": "https://www.youtube.com/embed/CyXbGjbsxdE"
+                   }
+                ],
+    },
+    "error": 0,
+    "message": "Success"
+}

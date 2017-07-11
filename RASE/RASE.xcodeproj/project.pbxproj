@@ -10,6 +10,9 @@
 		4DE8080013BAC8BF09A1F609 /* Pods_RASEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB45B37B99DA8F2F1C8A5AB8 /* Pods_RASEUITests.framework */; };
 		6491F89586EAA54116ED1D85 /* Pods_RASETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805A20A5F3FF73DA4F5A099C /* Pods_RASETests.framework */; };
 		801C7E40005063264608F509 /* Pods_RASE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF6A835633E7E7AF943FE078 /* Pods_RASE.framework */; };
+		CC518B861F132DF500C9A90B /* ServerData.json in Resources */ = {isa = PBXBuildFile; fileRef = CC518B851F132DF500C9A90B /* ServerData.json */; };
+		CC518B881F143B2900C9A90B /* DashboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC518B871F143B2900C9A90B /* DashboardModel.swift */; };
+		CC518B8E1F143BF700C9A90B /* DashboardModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC518B8D1F143BF700C9A90B /* DashboardModelView.swift */; };
 		CC5CA0B61F0F378400FE3AFF /* AccountManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5CA0B51F0F378400FE3AFF /* AccountManagement.swift */; };
 		CC5CA0B81F0FD4D200FE3AFF /* AthleteClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5CA0B71F0FD4D100FE3AFF /* AthleteClass.swift */; };
 		CC6973651EF23D3A00E1D494 /* PackageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6973641EF23D3A00E1D494 /* PackageViewCell.swift */; };
@@ -51,6 +54,9 @@
 		7F264A58B37B8D0900DA227B /* Pods-RASE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RASE.release.xcconfig"; path = "Pods/Target Support Files/Pods-RASE/Pods-RASE.release.xcconfig"; sourceTree = "<group>"; };
 		805A20A5F3FF73DA4F5A099C /* Pods_RASETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RASETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B34FF1BA7206E076837FAB53 /* Pods-RASEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RASEUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RASEUITests/Pods-RASEUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CC518B851F132DF500C9A90B /* ServerData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ServerData.json; sourceTree = "<group>"; };
+		CC518B871F143B2900C9A90B /* DashboardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardModel.swift; sourceTree = "<group>"; };
+		CC518B8D1F143BF700C9A90B /* DashboardModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardModelView.swift; sourceTree = "<group>"; };
 		CC5CA0B51F0F378400FE3AFF /* AccountManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManagement.swift; sourceTree = "<group>"; };
 		CC5CA0B71F0FD4D100FE3AFF /* AthleteClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AthleteClass.swift; sourceTree = "<group>"; };
 		CC6973641EF23D3A00E1D494 /* PackageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageViewCell.swift; sourceTree = "<group>"; };
@@ -130,9 +136,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CC518B891F143B3400C9A90B /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				CC518B871F143B2900C9A90B /* DashboardModel.swift */,
+				CC518B8D1F143BF700C9A90B /* DashboardModelView.swift */,
+				CCAD3A5B1EEF1B65007F7BB8 /* DashboardViewController.swift */,
+			);
+			name = Dashboard;
+			sourceTree = "<group>";
+		};
+		CC518B8A1F143B3B00C9A90B /* Landing Page */ = {
+			isa = PBXGroup;
+			children = (
+				CCDAF29D1F0544050066E6DE /* LandingPageViewController.swift */,
+				CCDAF29F1F06D2900066E6DE /* LandingPageMainViewController.swift */,
+			);
+			name = "Landing Page";
+			sourceTree = "<group>";
+		};
+		CC518B8B1F143B6400C9A90B /* User Interaction */ = {
+			isa = PBXGroup;
+			children = (
+				CC5CA0B71F0FD4D100FE3AFF /* AthleteClass.swift */,
+				CCAD3A2F1EEF1037007F7BB8 /* LoginViewController.swift */,
+				CC5CA0B51F0F378400FE3AFF /* AccountManagement.swift */,
+				CC6973661EF2FC0500E1D494 /* NewAthleteViewController.swift */,
+			);
+			name = "User Interaction";
+			sourceTree = "<group>";
+		};
+		CC518B8C1F143B9200C9A90B /* Old - Will be deleted */ = {
+			isa = PBXGroup;
+			children = (
+				CCE7293F1EF1A87C0071E1B0 /* PackageViewController.swift */,
+				CC6973641EF23D3A00E1D494 /* PackageViewCell.swift */,
+			);
+			name = "Old - Will be deleted";
+			sourceTree = "<group>";
+		};
 		CCAD3A211EEF1037007F7BB8 = {
 			isa = PBXGroup;
 			children = (
+				CC518B851F132DF500C9A90B /* ServerData.json */,
 				CCAD3A2C1EEF1037007F7BB8 /* RASE */,
 				CCAD3A411EEF1038007F7BB8 /* RASETests */,
 				CCAD3A4C1EEF1038007F7BB8 /* RASEUITests */,
@@ -155,21 +201,16 @@
 		CCAD3A2C1EEF1037007F7BB8 /* RASE */ = {
 			isa = PBXGroup;
 			children = (
-				CCAD3A2D1EEF1037007F7BB8 /* AppDelegate.swift */,
-				CCAD3A2F1EEF1037007F7BB8 /* LoginViewController.swift */,
-				CCAD3A311EEF1037007F7BB8 /* Main.storyboard */,
-				CC5CA0B51F0F378400FE3AFF /* AccountManagement.swift */,
-				CC5CA0B71F0FD4D100FE3AFF /* AthleteClass.swift */,
 				CCAD3A341EEF1037007F7BB8 /* Assets.xcassets */,
+				CCAD3A311EEF1037007F7BB8 /* Main.storyboard */,
 				CCAD3A361EEF1037007F7BB8 /* LaunchScreen.storyboard */,
 				CCAD3A391EEF1037007F7BB8 /* Info.plist */,
-				CCAD3A5B1EEF1B65007F7BB8 /* DashboardViewController.swift */,
-				CCE7293F1EF1A87C0071E1B0 /* PackageViewController.swift */,
-				CC6973641EF23D3A00E1D494 /* PackageViewCell.swift */,
-				CC6973661EF2FC0500E1D494 /* NewAthleteViewController.swift */,
-				CCDAF29D1F0544050066E6DE /* LandingPageViewController.swift */,
-				CCDAF29F1F06D2900066E6DE /* LandingPageMainViewController.swift */,
+				CCAD3A2D1EEF1037007F7BB8 /* AppDelegate.swift */,
 				CCDAF2A11F0951A90066E6DE /* BaseViewController.swift */,
+				CC518B8A1F143B3B00C9A90B /* Landing Page */,
+				CC518B8B1F143B6400C9A90B /* User Interaction */,
+				CC518B891F143B3400C9A90B /* Dashboard */,
+				CC518B8C1F143B9200C9A90B /* Old - Will be deleted */,
 			);
 			path = RASE;
 			sourceTree = "<group>";
@@ -308,6 +349,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC518B861F132DF500C9A90B /* ServerData.json in Resources */,
 				CCAD3A381EEF1037007F7BB8 /* LaunchScreen.storyboard in Resources */,
 				CCAD3A351EEF1037007F7BB8 /* Assets.xcassets in Resources */,
 				CCAD3A331EEF1037007F7BB8 /* Main.storyboard in Resources */,
@@ -473,10 +515,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC518B8E1F143BF700C9A90B /* DashboardModelView.swift in Sources */,
 				CCE729401EF1A87C0071E1B0 /* PackageViewController.swift in Sources */,
 				CCDAF2A21F0951A90066E6DE /* BaseViewController.swift in Sources */,
 				CC6973651EF23D3A00E1D494 /* PackageViewCell.swift in Sources */,
 				CCDAF29E1F0544050066E6DE /* LandingPageViewController.swift in Sources */,
+				CC518B881F143B2900C9A90B /* DashboardModel.swift in Sources */,
 				CC5CA0B61F0F378400FE3AFF /* AccountManagement.swift in Sources */,
 				CCAD3A301EEF1037007F7BB8 /* LoginViewController.swift in Sources */,
 				CC5CA0B81F0FD4D200FE3AFF /* AthleteClass.swift in Sources */,
