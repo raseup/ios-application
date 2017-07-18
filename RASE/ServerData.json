@@ -1,25 +1,89 @@
 {
     "data": {
         "id": 1,
-        "fullName": "Sam Beaulieu",
-        "email": "bseaam@gmail.com",
-        "quote": "RASE Your Game Today",
+        "description": "In this week's workout, you will focus on your game in the paint.",
+        "version": "basic",
         "drills": [
                     {
-                    "name": "Diagonal Lane Slides",
-                    "description": "This is a description for the video. Look at how cool it looks on the application! Dripple dribble dribble the ball etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. ",
-                    "url": "https://www.youtube.com/embed/CyXbGjbsxdE"
+                    "name": "Fund 1",
+                    "sets": "4",
+                    "reps": "10",
+                    "video_url": "https://www.youtube.com/embed/CyXbGjbsxdE",
+                    "image_url": "blah",
+                    "type": "fundamentals"
                     },
                    {
-                   "name": "Tennis Ball Cone Behind the Back",
-                   "description": "This is a description for the video. Look at how cool it looks on the application! Dripple dribble dribble the ball etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. ",
-                   "url": "https://www.youtube.com/embed/CyXbGjbsxdE"
+                   "name": "Fund 2",
+                   "sets": "3",
+                   "reps": "8",
+                   "video_url": "https://www.youtube.com/embed/CyXbGjbsxdE",
+                   "image_url": "blah",
+                   "type": "fundamentals"
                    },
                    {
-                   "name": "Windshield Wiper - Between the Legs Pull Up",
-                   "description": "This is a description for the video. Look at how cool it looks on the application! Dripple dribble dribble the ball etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. ",
-                   "url": "https://www.youtube.com/embed/CyXbGjbsxdE"
-                   }
+                   "name": "BallHandling 1",
+                   "sets": "4",
+                   "reps": "10",
+                   "video_url": "https://www.youtube.com/embed/CyXbGjbsxdE",
+                   "image_url": "blah",
+                   "type": "ball_handling"
+                   },
+                   {
+                   "name": "Defense 1",
+                   "sets": "4",
+                   "reps": "10",
+                   "video_url": "https://www.youtube.com/embed/CyXbGjbsxdE",
+                   "image_url": "blah",
+                   "type": "defense"
+                   },
+                   {
+                   "name": "BallHandling 2",
+                   "sets": "3",
+                   "reps": "8",
+                   "video_url": "https://www.youtube.com/embed/CyXbGjbsxdE",
+                   "image_url": "blah",
+                   "type": "ball_handling"
+                   },
+                   {
+                   "name": "Passing",
+                   "sets": "4",
+                   "reps": "10",
+                   "video_url": "https://www.youtube.com/embed/CyXbGjbsxdE",
+                   "image_url": "blah",
+                   "type": "passing"
+                   },
+                   {
+                   "name": "finishing",
+                   "sets": "4",
+                   "reps": "10",
+                   "video_url": "https://www.youtube.com/embed/CyXbGjbsxdE",
+                   "image_url": "blah",
+                   "type": "finishing"
+                   },
+                   {
+                   "name": "Defense 2",
+                   "sets": "3",
+                   "reps": "8",
+                   "video_url": "https://www.youtube.com/embed/CyXbGjbsxdE",
+                   "image_url": "blah",
+                   "type": "defense"
+                   },
+                   {
+                   "name": "Shooting",
+                   "sets": "4",
+                   "reps": "10",
+                   "video_url": "https://www.youtube.com/embed/CyXbGjbsxdE",
+                   "image_url": "blah",
+                   "type": "shooting"
+                   },
+                   {
+                   "name": "Fund 3",
+                   "sets": "2",
+                   "reps": "20",
+                   "video_url": "https://www.youtube.com/embed/CyXbGjbsxdE",
+                   "image_url": "blah",
+                   "type": "fundamentals"
+                   },
                 ],
     },
     "error": 0,
