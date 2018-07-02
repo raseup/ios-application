@@ -1,12 +1,41 @@
 PODS:
-  - Stripe (9.4.0)
+  - AWSAPIGateway (2.6.3):
+    - AWSCore (= 2.6.3)
+  - AWSAuthCore (2.6.3):
+    - AWSCore (= 2.6.3)
+  - AWSCognito (2.6.3):
+    - AWSCore (= 2.6.3)
+  - AWSCognitoIdentityProvider (2.6.3):
+    - AWSCore (= 2.6.3)
+  - AWSCore (2.6.3)
+  - AWSS3 (2.6.3):
+    - AWSCore (= 2.6.3)
+  - Charts (3.0.3):
+    - Charts/Core (= 3.0.3)
+  - Charts/Core (3.0.3)
+  - SQLite.swift (0.11.4):
+    - SQLite.swift/standard (= 0.11.4)
+  - SQLite.swift/standard (0.11.4)
 
 DEPENDENCIES:
-  - Stripe
+  - AWSAPIGateway
+  - AWSAuthCore
+  - AWSCognito
+  - AWSCognitoIdentityProvider
+  - AWSS3
+  - Charts (= 3.0.3)
+  - SQLite.swift (~> 0.11.3)
 
 SPEC CHECKSUMS:
-  Stripe: 0957cc85df5c3df153e6fb44d307ea4b778b6bd1
+  AWSAPIGateway: 03a2244e75a8a3948501e7a56b3e0b7e6d0c3192
+  AWSAuthCore: d45af3dc231d436703432c5fe856bfe325867f73
+  AWSCognito: 89beca0210b195ab0f1e3b21b9b3b8462c55c9ec
+  AWSCognitoIdentityProvider: 73627f6a154de9eae238a15f121099971fa884c9
+  AWSCore: 05ff0ec10c2e79487e0caaa64faa3b76884a7b2f
+  AWSS3: 01613bbee0409d270aabbc1e37ec5012400d4cce
+  Charts: bcde37724c161958c1438dd4883971fcb2d50c06
+  SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
 
-PODFILE CHECKSUM: f2ddb5a3d5bd28fa5ac04d1c0713aa03397e9e1b
+PODFILE CHECKSUM: a6bb071c944422781fa97adf90a40b733201e13b
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.4.0

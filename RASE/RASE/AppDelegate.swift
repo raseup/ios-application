@@ -7,19 +7,49 @@
 //
 
 import UIKit
-import Stripe
+import AWSAuthCore
+import AWSCognito
+import UserNotifications
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+@UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    // For Amazon connection
+    var isInitialized: Bool = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
-        // Initialize Stripe public key (MUST BE UPDATED WITH ACTUAL VAUE)
-        STPPaymentConfiguration.shared().publishableKey = "pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+        // Override point for customization after application launch.
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        // Handle offline push notifications and register for remote notifications
+        if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
+            let _ = notification["aps"] as! [String: AnyObject]
+        }
+        registerForPushNotifications()
+        
+        // Prepare AWS Credentials
+        let credentialProvider = AWSCognitoCredentialsProvider(regionType: .USEast1, identityPoolId: "us-east-1:8819943f-8a57-4418-b735-64bb4c3e4546")
+        let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialProvider)
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
+
+        // Finish AWS sign in
+        let didFinishLaunching = AWSSignInManager.sharedInstance().interceptApplication(application, didFinishLaunchingWithOptions: launchOptions)
+        if (!isInitialized) {
+            AWSSignInManager.sharedInstance().resumeSession(completionHandler: { (result: Any?, error: Error?) in
+                print("Result: \(String(describing: result)) \n Error:\(String(describing: error))")
+            })
+            isInitialized = true
+        }
+
+        return didFinishLaunching
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        print("application application: \(application.description), openURL: \(url.absoluteURL), sourceApplication: \(String(describing: sourceApplication))")
+        AWSSignInManager.sharedInstance().interceptApplication(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+        isInitialized = true
         
         return true
     }
@@ -40,14 +70,86 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        
-        // self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Dashboard")
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    
+    // MARK: PUSH NOTIFICATIONS
+    
+    // Registers push notifications for the application
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+        // Get device token
+        let tokenParts = deviceToken.map { data -> String in
+            return String(format: "%02.2hhx", data)
+        }
+        let token = tokenParts.joined()
+        
+        // Update the database
+        updateDeviceToken(token: token)
+    }
+    
+    // When registration fails... shouldn't happen.
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        
+        print("Failed to register: \(error)")
+        
+        // Update the database
+        updateDeviceToken(token: "")
+    }
+    
+    // Push notification handler for when app is running
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        print(userInfo)
+    }
+    
+    func updateDeviceToken(token: String) {
+        let update = RASEDB.instance.updateDeviceData(nkey: "device_token", nvalue: token)
+        if !update {
+            _ = RASEDB.instance.addDeviceData(nkey: "device_token", nvalue: token)
+        }
+        if let user = RASEDB.instance.getPrimaryUser(),
+           let oauthToken = user.oauthToken {
+            sendDeviceToken(oauthToken: oauthToken, newDeviceToken: token, success: successHandler, failure: failureHandler)
+        }
+    }
+    
+    // Register for push notifications
+    func registerForPushNotifications() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
+            (granted, error) in
+            print("Permission granted: \(granted)")
+            
+            guard granted else { return }
+            self.getNotificationSettings()
+        }
+    }
+    
+    // Get notification settings
+    func getNotificationSettings() {
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            print("Notification settings: \(settings)")
+            
+            guard settings.authorizationStatus == .authorized else { return }
+            
+            DispatchQueue.main.async {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
+        }
+    }
+    
+    func failureHandler(message: String) -> Void {
+        
+        // Create the alert
+        print("Send Token Error: \(message)")
+    }
+    
+    func successHandler() -> Void {
+        print("Token Success")
+    }
 }
 

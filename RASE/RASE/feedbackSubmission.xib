@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Trade Gothic LT Bold.ttf">
+            <string>TradeGothicLT-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FeedbackSubmissionCell" customModule="RASE" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xrh-VG-ve3">
+                    <rect key="frame" x="-0.5" y="0.0" width="375" height="70"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2z4-r5-LGq">
+                            <rect key="frame" x="15" y="15" width="345" height="40"/>
+                            <color key="backgroundColor" red="0.9509544969" green="0.64515239000000002" blue="0.22301229829999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="Jgq-nN-UcJ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="TradeGothicLT-Bold" family="TradeGothic LT Bold" pointSize="20"/>
+                            <state key="normal" title="SUBMIT FEEDBACK">
+                                <color key="titleColor" red="0.12547713520000001" green="0.12549752" blue="0.1254701614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="submitPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="NHG-Uk-RAV"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.12547713520000001" green="0.12549752" blue="0.1254701614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="2z4-r5-LGq" firstAttribute="leading" secondItem="Xrh-VG-ve3" secondAttribute="leading" constant="15" id="I1u-mQ-lFF"/>
+                        <constraint firstAttribute="bottom" secondItem="2z4-r5-LGq" secondAttribute="bottom" constant="15" id="MfW-e2-Umy"/>
+                        <constraint firstAttribute="trailing" secondItem="2z4-r5-LGq" secondAttribute="trailing" constant="15" id="ehM-dT-LoP"/>
+                        <constraint firstItem="2z4-r5-LGq" firstAttribute="centerX" secondItem="Xrh-VG-ve3" secondAttribute="centerX" id="oL5-f0-X5f"/>
+                        <constraint firstItem="2z4-r5-LGq" firstAttribute="top" secondItem="Xrh-VG-ve3" secondAttribute="top" constant="15" id="vu2-0P-ddd"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.12547713520000001" green="0.12549752" blue="0.1254701614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Xrh-VG-ve3" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="8iJ-6c-kwR"/>
+                <constraint firstItem="Xrh-VG-ve3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KSz-IN-5Ma"/>
+                <constraint firstItem="Xrh-VG-ve3" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="eAF-nN-604"/>
+                <constraint firstItem="Xrh-VG-ve3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="x6Y-C9-ar7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="submitButton" destination="2z4-r5-LGq" id="bVM-VB-Ss5"/>
+            </connections>
+        </view>
+    </objects>
+</document>

@@ -1,34 +1,44 @@
 //
-//  LandingPageViewController.swift
+//  ViewController.swift
 //  RASE
 //
-//  Created by Sam Beaulieu on 6/29/17.
-//  Copyright © 2017 RASE. All rights reserved.
+//  Created by Sam Beaulieu on 3/24/18.
+//  Copyright © 2018 RASE. All rights reserved.
 //
 
 import UIKit
 
-var orderedViewControllers: [UIViewController] = {
-    return [UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Green"),
-            UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Red"),
-            UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Blue")]
-}()
-
 class LandingPageViewController: UIPageViewController, UIPageViewControllerDelegate {
     
     var newIndex: Int = 0
+    var orderedViewControllers: [UIViewController] = []
+    var pageControl: UIPageControl!
+    
+    // For scroll transition style
+    override init(transitionStyle style: UIPageViewControllerTransitionStyle, navigationOrientation: UIPageViewControllerNavigationOrientation, options: [String : Any]? = nil) {
+        super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: options)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
+        
+        // Prepare the page based view controllers
         dataSource = self
         delegate = self
+        
+        for image in landingBackgroundImages {
+            let vc = LandingPageImageViewController(nibName: "LandingPageImageViewController", bundle: nil)
+            vc.background = image
+            orderedViewControllers.append(vc)
+        }
         
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,12 +48,13 @@ class LandingPageViewController: UIPageViewController, UIPageViewControllerDeleg
     
 }
 
+// Handle the landing page view controllers
 extension LandingPageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController],transitionCompleted completed: Bool) {
         
         let viewControllerIndex = orderedViewControllers.index(of: self.viewControllers![0])
-        pageControlGlobal!.currentPage = viewControllerIndex!
+        pageControl.currentPage = viewControllerIndex!
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -84,3 +95,4 @@ extension LandingPageViewController: UIPageViewControllerDataSource {
         return orderedViewControllers[nextIndex]
     }
 }
+

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Trade Gothic LT Bold.ttf">
+            <string>TradeGothicLT-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FeedbackDrillCell" customModule="RASE" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9O-nx-TfD">
+                    <rect key="frame" x="-0.5" y="0.0" width="375" height="110"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How were the fundamental drills?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4x-Df-K0o">
+                            <rect key="frame" x="15" y="10" width="254" height="20"/>
+                            <fontDescription key="fontDescription" name="TradeGothicLT-Bold" family="TradeGothic LT Bold" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unselected-Down-Thumb" translatesAutoresizingMaskIntoConstraints="NO" id="JXo-eu-q7T">
+                            <rect key="frame" x="212.5" y="45" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="JXo-eu-q7T" secondAttribute="height" multiplier="1:1" id="iim-js-gvh"/>
+                                <constraint firstAttribute="width" constant="50" id="zxz-gD-wNl"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unselected-Thumb" translatesAutoresizingMaskIntoConstraints="NO" id="aTA-5G-ybi">
+                            <rect key="frame" x="112.5" y="45" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="bMX-gK-EmW"/>
+                                <constraint firstAttribute="width" secondItem="aTA-5G-ybi" secondAttribute="height" multiplier="1:1" id="kTj-N7-zIN"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.12547713520000001" green="0.12549752" blue="0.1254701614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="JXo-eu-q7T" secondAttribute="bottom" constant="15" id="BW8-Ut-ktV"/>
+                        <constraint firstItem="JXo-eu-q7T" firstAttribute="centerX" secondItem="T9O-nx-TfD" secondAttribute="centerX" constant="50" id="IZY-Lc-30m"/>
+                        <constraint firstItem="U4x-Df-K0o" firstAttribute="leading" secondItem="T9O-nx-TfD" secondAttribute="leading" constant="15" id="X9s-c2-Fzm"/>
+                        <constraint firstItem="U4x-Df-K0o" firstAttribute="top" secondItem="T9O-nx-TfD" secondAttribute="top" constant="10" id="Z8g-KU-IMF"/>
+                        <constraint firstItem="JXo-eu-q7T" firstAttribute="centerY" secondItem="aTA-5G-ybi" secondAttribute="centerY" id="akk-XN-xMf"/>
+                        <constraint firstItem="aTA-5G-ybi" firstAttribute="centerX" secondItem="T9O-nx-TfD" secondAttribute="centerX" constant="-50" id="nIX-Di-mWo"/>
+                        <constraint firstItem="JXo-eu-q7T" firstAttribute="top" secondItem="U4x-Df-K0o" secondAttribute="bottom" constant="15" id="tTH-B5-io6"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.12547713520000001" green="0.12549752" blue="0.1254701614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="T9O-nx-TfD" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="6kh-D5-udd"/>
+                <constraint firstItem="T9O-nx-TfD" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="6nb-Ze-cwF"/>
+                <constraint firstItem="T9O-nx-TfD" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fEe-Wa-eCe"/>
+                <constraint firstItem="T9O-nx-TfD" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="kK9-1H-PT1"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="drillFeedbackLabel" destination="U4x-Df-K0o" id="3sx-7b-Sgr"/>
+                <outlet property="thumbsDownImage" destination="JXo-eu-q7T" id="LX9-A0-UUi"/>
+                <outlet property="thumbsUpImage" destination="aTA-5G-ybi" id="jMM-nt-cbq"/>
+            </connections>
+            <point key="canvasLocation" x="26.5" y="-244.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Unselected-Down-Thumb" width="256" height="256"/>
+        <image name="Unselected-Thumb" width="256" height="256"/>
+    </resources>
+</document>

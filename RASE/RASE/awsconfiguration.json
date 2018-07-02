@@ -1,0 +1,22 @@
+{
+    "UserAgent": "MobileHub/1.0",
+    "Version": "1.0",
+    "CredentialsProvider": {
+        "CognitoIdentity": {
+            "Default": {
+                "PoolId": "us-east-1:8819943f-8a57-4418-b735-64bb4c3e4546",
+                "Region": "us-east-1"
+            }
+        }
+    },
+    "IdentityManager": {
+        "Default": {}
+    },
+    "ContentManager": {
+        "Default": {
+            "Bucket": "rase-hosting-mobilehub-916659400",
+            "Region": "us-east-1",
+            "CloudFrontURL": "https://d35ci6aqz4rf5i.cloudfront.net"
+        }
+    }
+}

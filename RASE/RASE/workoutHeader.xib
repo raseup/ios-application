@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Trade Gothic LT Bold.ttf">
+            <string>TradeGothicLT-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomWorkoutTableHeader" customModule="RASE" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZy-j1-mDJ" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fg-hB-Vd7">
+                            <rect key="frame" x="10" y="5" width="31.5" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="9Cw-YS-sfh"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="TradeGothicLT-Bold" family="TradeGothic LT Bold" pointSize="14"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="\/" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gox-Ck-Ull">
+                            <rect key="frame" x="345" y="5" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="HPw-2b-PeG"/>
+                                <constraint firstAttribute="height" constant="20" id="yug-DZ-o6J"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="TradeGothicLT-Bold" family="TradeGothic LT Bold" pointSize="8"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.12547713520000001" green="0.12549752" blue="0.1254701614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="0Kd-5V-I6h"/>
+                        <constraint firstItem="9fg-hB-Vd7" firstAttribute="centerY" secondItem="cZy-j1-mDJ" secondAttribute="centerY" id="U19-Bf-Pf7"/>
+                        <constraint firstItem="gox-Ck-Ull" firstAttribute="centerY" secondItem="cZy-j1-mDJ" secondAttribute="centerY" id="elm-hX-0oX"/>
+                        <constraint firstItem="9fg-hB-Vd7" firstAttribute="leading" secondItem="cZy-j1-mDJ" secondAttribute="leading" constant="10" id="nc0-Vd-Swp"/>
+                        <constraint firstAttribute="trailing" secondItem="gox-Ck-Ull" secondAttribute="trailing" constant="10" id="yGs-4j-Ad7"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="cZy-j1-mDJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Gdx-Ve-mrF"/>
+                <constraint firstItem="cZy-j1-mDJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VtM-Za-aA3"/>
+                <constraint firstAttribute="trailing" secondItem="cZy-j1-mDJ" secondAttribute="trailing" id="zaj-Ei-zCo"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="arrowLabel" destination="gox-Ck-Ull" id="A7S-59-Cys"/>
+                <outlet property="sectionTitleLabel" destination="9fg-hB-Vd7" id="rHk-Dg-Y4C"/>
+            </connections>
+            <point key="canvasLocation" x="-9.5" y="-159"/>
+        </view>
+    </objects>
+</document>

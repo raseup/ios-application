@@ -2,6 +2,52 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AWS</key>
+	<dict>
+		<key>ContentManager</key>
+		<dict>
+			<key>Default</key>
+			<dict>
+				<key>CloudFrontURL</key>
+				<string>https://d35ci6aqz4rf5i.cloudfront.net</string>
+				<key>Region</key>
+				<string>us-east-1</string>
+				<key>S3Bucket</key>
+				<string>rase-hosting-mobilehub-916659400</string>
+			</dict>
+		</dict>
+		<key>CredentialsProvider</key>
+		<dict>
+			<key>CognitoIdentity</key>
+			<dict>
+				<key>Default</key>
+				<dict>
+					<key>PoolId</key>
+					<string>us-east-1:8819943f-8a57-4418-b735-64bb4c3e4546</string>
+					<key>Region</key>
+					<string>us-east-1</string>
+				</dict>
+			</dict>
+		</dict>
+		<key>IdentityManager</key>
+		<dict>
+			<key>Default</key>
+			<dict/>
+		</dict>
+		<key>MobileHub</key>
+		<dict>
+			<key>ProjectClientId</key>
+			<string>MobileHub 22ea5888-fe58-4820-a4cd-27248f9533f2 aws-my-sample-app-ios-swift-v0.19</string>
+		</dict>
+		<key>S3TransferManager</key>
+		<dict>
+			<key>Default</key>
+			<dict>
+				<key>Region</key>
+				<string>us-east-1</string>
+			</dict>
+		</dict>
+	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -17,9 +63,33 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>11.5</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>RASE Athletics would like to access your camera for taking photos and videos.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>RASE Athletics would like to access your microphone for video recording.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>RASE Athletics would like to access your photo library for photo and video upload.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Trade Gothic LT Bold.ttf</string>
+		<string>Trade Gothic LT Light.ttf</string>
+		<string>Trade Gothic LT.ttf</string>
+		<string>MS Reference Sans Serif Regular.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -34,5 +104,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

@@ -7,76 +7,116 @@
 //
 
 import UIKit
+import Foundation
 
-class NewAthleteViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class NewAthleteViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
     // Variables
+    @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var ageTextField: UITextField!
-    @IBOutlet weak var positionTextField: UITextField!
-    @IBOutlet weak var recieveLatestSwitch: UISwitch!
+    @IBOutlet weak var dateOfBirth: UITextField!
     @IBOutlet weak var createAccountButton: UIButton!
-    @IBOutlet weak var pickerAge: UIPickerView!
-    @IBOutlet weak var pickerPosition: UIPickerView!
     @IBOutlet weak var scrollConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var termsText: UILabel!
+    @IBOutlet weak var termsButton: UIButton!
+    @IBOutlet weak var helpText: UILabel!
+    @IBOutlet weak var titleText: UILabel!
+    @IBOutlet weak var raseIcon: UIImageView!
     
-    // Activity Indicator for saving new user
-    let spinner: UIActivityIndicatorView = UIActivityIndicatorView()
-    var progressContainer: UIView = UIView()
+    var activeTextField: UITextField?
     
-    // In case there is an error creating new user
-    let alert = UIAlertController(title: "Error", message: "There was a problem creating your account. Please try again.", preferredStyle: UIAlertControllerStyle.alert)
+    // Activity Indicator for saving new user and alert for failures
+    var indicator: ActivityIndicator!
+    var alert: UIAlertController!
     
-    let alert2 = UIAlertController(title: "Error", message: "Please enter text for the email, password, and name fields and select values for age and position.", preferredStyle: UIAlertControllerStyle.alert)
+    // Prepare data picker variables
+    let dateBirthPicker = UIDatePicker()
+    var tempDate: Date!
     
-    var newAthlete: Athlete = Athlete(email: "", password: "", first_name: "", last_name: "", age: 1, position: "", recieve_latest: 1, token: "")
-    
-    var ageList: [String] = [String]()
-    var positionList = ["Point Guard", "Shooting Guard", "Small Forward", "Power Forward", "Center", "I do not have a position"]
+    // Prepare background variables
+    var background: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        self.pickerAge.delegate = self
-        self.pickerAge.dataSource = self
-        self.pickerPosition.delegate = self
-        self.pickerPosition.dataSource = self
+        // Set the blur
+        let blur = CIFilter(name: "CIGaussianBlur")!
+        blur.setValue(CIImage(image: background), forKey: kCIInputImageKey)
+        blur.setValue(3.0, forKey: kCIInputRadiusKey)
+        let ciContext = CIContext(options: nil)
+        let result = blur.value(forKey: kCIOutputImageKey) as! CIImage!
+        let cgImage = ciContext.createCGImage(result!, from: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         
-        for val in 4...75
-        {
-            self.ageList.append(String(val))
-        }
+        // Set the background image
+        let backgroundImageView = UIImageView(image: UIImage(cgImage: cgImage!))
+        backgroundImageView.frame = self.view.frame
+        self.view.insertSubview(backgroundImageView, at: 0)
         
-        self.alert2.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
-            // Enable all interactions underneath
-            self.emailTextField.isEnabled = true
-            self.passwordTextField.isEnabled = true
-            self.firstNameTextField.isEnabled = true
-            self.lastNameTextField.isEnabled = true
-            self.ageTextField.isEnabled = true
-            self.positionTextField.isEnabled = true
-            self.recieveLatestSwitch.isEnabled = true
-            self.createAccountButton.isEnabled = true
-            
-            self.progressContainer.removeFromSuperview()
-        }))
-        self.alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
-            // Enable all interactions underneath
-            self.emailTextField.isEnabled = true
-            self.passwordTextField.isEnabled = true
-            self.firstNameTextField.isEnabled = true
-            self.lastNameTextField.isEnabled = true
-            self.ageTextField.isEnabled = true
-            self.positionTextField.isEnabled = true
-            self.recieveLatestSwitch.isEnabled = true
-            self.createAccountButton.isEnabled = true
-            
-            self.progressContainer.removeFromSuperview()
-        }))
+        // Set the background view
+        let darkView = UIView()
+        darkView.backgroundColor = backgroundGray
+        darkView.alpha = 0.8
+        darkView.frame = self.view.frame
+        self.view.insertSubview(darkView, aboveSubview: backgroundImageView)
+        
+        // Initialize activity indicator
+        self.indicator = ActivityIndicator(viewController: self)
+        let px = 1 / UIScreen.main.scale
+        scrollView.delegate = self
+        
+        // Round the create accound button
+        createAccountButton.layer.cornerRadius = 5.0
+        
+        // Set text field information for email field
+        self.emailTextField.delegate = self
+        self.emailTextField.returnKeyType = .done
+        self.emailTextField.keyboardAppearance = .dark
+        self.emailTextField.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSForegroundColorAttributeName: placeHolderWhite])
+        let emailBottom = UIView(frame: CGRect(x: emailTextField.frame.minX, y: emailTextField.frame.maxY, width: emailTextField.frame.width, height: px))
+        emailBottom.backgroundColor = placeHolderWhite
+        self.scrollView.addSubview(emailBottom)
+        
+        // Set text field information for password field
+        self.passwordTextField.tag = 2
+        self.passwordTextField.delegate = self
+        self.passwordTextField.returnKeyType = .done
+        self.passwordTextField.keyboardAppearance = .dark
+        self.passwordTextField.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSForegroundColorAttributeName: placeHolderWhite])
+        let passwordBottom = UIView(frame: CGRect(x: passwordTextField.frame.minX, y: passwordTextField.frame.maxY, width: passwordTextField.frame.width, height: px))
+        passwordBottom.backgroundColor = placeHolderWhite
+        self.scrollView.addSubview(passwordBottom)
+        
+        // Set text field information for first name field
+        self.firstNameTextField.delegate = self
+        self.firstNameTextField.returnKeyType = .done
+        self.firstNameTextField.keyboardAppearance = .dark
+        self.firstNameTextField.attributedPlaceholder = NSAttributedString(string: "full name", attributes: [NSForegroundColorAttributeName: placeHolderWhite])
+        let firstBottom = UIView(frame: CGRect(x: firstNameTextField.frame.minX, y: firstNameTextField.frame.maxY, width: firstNameTextField.frame.width, height: px))
+        firstBottom.backgroundColor = placeHolderWhite
+        self.scrollView.addSubview(firstBottom)
+
+        // Prepare the picker view's toolbar
+        let pickerBar = UIToolbar(frame:  CGRect(x: 0, y: 0, width: self.view.frame.width, height: 44))
+        pickerBar.barTintColor = backgroundGray
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(donePressed))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        pickerBar.setItems([spaceButton, doneButton], animated: true)
+        
+        // Set date picker
+        self.dateBirthPicker.backgroundColor = backgroundGray
+        self.dateBirthPicker.datePickerMode = .date
+        self.dateBirthPicker.setValue(UIColor.white, forKeyPath: "textColor")
+        self.dateBirthPicker.addTarget(self, action:  #selector(dateBirthChanged), for: .valueChanged)
+        self.dateOfBirth.delegate = self
+        self.dateOfBirth.inputView = self.dateBirthPicker
+        self.dateOfBirth.inputAccessoryView = pickerBar
+        self.dateOfBirth.attributedPlaceholder = NSAttributedString(string: "date of birth", attributes: [NSForegroundColorAttributeName: placeHolderWhite])
+        let dateBottom = UIView(frame: CGRect(x: dateOfBirth.frame.minX, y: dateOfBirth.frame.maxY, width: dateOfBirth.frame.width, height: px))
+        dateBottom.backgroundColor = placeHolderWhite
+        self.scrollView.addSubview(dateBottom)
     }
     
     override func didReceiveMemoryWarning() {
@@ -84,203 +124,168 @@ class NewAthleteViewController: UIViewController, UIPickerViewDelegate, UIPicker
         // Dispose of any resources that can be recreated.
     }
     
-    // Picker Functions
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
-        return 1
-    }
-    
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+    // When a text field is selected for editing, update the scroll constraints and set the active field
+    func textFieldDidBeginEditing(_ textField: UITextField) { // became first responder
         
-        if pickerView.tag == 1
-        {
-            return self.ageList.count
-        }
-        else
-        {
-            return self.positionList.count
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        // Set the current text field
+        activeTextField = textField
         
-        if pickerView.tag == 1
-        {
-            return self.ageList[row]
+        // Animate the constraint so the view can scroll
+        if textField.tag == 2 {
+            // No toolbar for password so a bit less constraint
+            self.scrollConstraint.constant = 216
         }
-        else
-        {
-            return self.positionList[row]
+        else {
+            self.scrollConstraint.constant = 260
+        }
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    // Dismissal for text fields
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        if pickerView.tag == 1
-        {
-            self.ageTextField.text = self.ageList[row]
-            self.scrollConstraint.constant = 0
-            self.pickerAge.isHidden = true
+        // Close the input view of the responder
+        textField.resignFirstResponder()
+        
+        // Animate the constraint back to 0
+        self.scrollConstraint.constant = 0
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
         }
-        else
-        {
-            self.positionTextField.text = self.positionList[row]
-            self.scrollConstraint.constant = 0
-            self.pickerPosition.isHidden = true
+        return true
+    }
+    
+    // Dismissal for picker views
+    @objc func donePressed() {
+        
+        // Close the input view of the responder
+        activeTextField?.resignFirstResponder()
+
+        // Animate the constraint back to 0
+        self.scrollConstraint.constant = 0
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
         }
     }
     
-    @IBAction func emailBeginEditing(_ sender: UITextField) {
-        self.scrollConstraint.constant = 0
-        self.pickerPosition.isHidden = true
-        self.pickerAge.isHidden = true
+    // If the date picker is changed, set the date
+    @objc func dateBirthChanged(sender:UIDatePicker) {
+        tempDate = sender.date
+        dateOfBirth.text = dateToStringReadable(date: sender.date)
     }
     
-    @IBAction func passwordBeginEditing(_ sender: UITextField) {
-        self.scrollConstraint.constant = 0
-        self.pickerPosition.isHidden = true
-        self.pickerAge.isHidden = true
-    }
-    
-    @IBAction func firstNameBeginEditing(_ sender: UITextField) {
-        self.scrollConstraint.constant = 0
-        self.pickerPosition.isHidden = true
-        self.pickerAge.isHidden = true
-    }
-    
-    @IBAction func lastNameBeginEditing(_ sender: UITextField) {
-        self.pickerPosition.isHidden = true
-        self.pickerAge.isHidden = true
-        self.scrollConstraint.constant = 0
-    }
-    
-    @IBAction func ageBeginEditing(_ sender: UITextField) {
-        self.pickerAge.isHidden = false
-        self.pickerPosition.isHidden = true
-        self.scrollConstraint.constant = -216
-        self.ageTextField.endEditing(true)
-    }
-    
-    @IBAction func positionBeginEdition(_ sender: UITextField) {
-        self.pickerPosition.isHidden = false
-        self.pickerAge.isHidden = true
-        self.scrollConstraint.constant = -216
-        self.positionTextField.endEditing(true)
-    }
-    
+    // Dismiss the page
     @IBAction func closeButtonClicked(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func showActivityIndicator() {
+    // Present the disclaimer page
+    @IBAction func disclaimerButtonPressed(_ sender: UIButton) {
         
-        // Disable all interactions underneath
-        self.emailTextField.isEnabled = false
-        self.passwordTextField.isEnabled = false
-        self.firstNameTextField.isEnabled = false
-        self.lastNameTextField.isEnabled = false
-        self.ageTextField.isEnabled = false
-        self.positionTextField.isEnabled = false
-        self.recieveLatestSwitch.isEnabled = false
-        self.createAccountButton.isEnabled = false
+        // Generates the background image
+        UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, true, 1)
+        self.view.drawHierarchy(in: self.view.bounds, afterScreenUpdates: true)
+        let screen = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
         
-        // create greyed out foreground
-        progressContainer.frame = CGRect(x: 0, y: 0, width: 30000, height: 30000)
-        progressContainer.center = self.view.center
-        progressContainer.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha:0.3)
-        
-        // format spinner
-        spinner.frame = CGRect(x: 0.0, y: 0.0, width: 40.0, height: 40.0)
-        spinner.center = self.view.center
-        spinner.hidesWhenStopped = true
-        spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
-        
-        self.view.addSubview(progressContainer)
-        self.view.bringSubview(toFront: progressContainer)
-        
-        self.view.addSubview(spinner)
-        self.view.bringSubview(toFront: spinner)
-        spinner.startAnimating()
+        // Presents the view
+        let vc = TermsAndConditionsViewController(nibName: "TermsAndConditionsView", bundle: nil)
+        vc.background = screen
+        self.present(vc, animated: true, completion: nil)
     }
 
-    
     @IBAction func createNewUser(_ sender: UIButton) {
         
-        showActivityIndicator()
+        // Start progress indicator
+        self.indicator.startAnimator()
         
         // First do error checking
-        if emailTextField.text != "" && emailTextField.text!.range(of: "@") != nil {
-            newAthlete.email = emailTextField.text!
-        }
-        else {
-            failureHandler2()
+        if emailTextField.text == "" || emailTextField.text!.range(of: "@") == nil {
+            failureHandler(message: "Please enter a valid email address.")
             return
         }
-        if passwordTextField.text != "" {
-            newAthlete.password = passwordTextField.text!
-        }
-        else {
-            failureHandler2()
-            return
-        }
-        if firstNameTextField.text != "" {
-            newAthlete.first_name = firstNameTextField.text!
-        }
-        else {
-            failureHandler2()
+        if passwordTextField.text == nil {
+            failureHandler(message: "Please enter a password.")
             return
         }
         
-        if lastNameTextField.text != "" {
-            newAthlete.last_name = lastNameTextField.text!
-        }
-        else {
-            failureHandler2()
+        // Checks to see if the password has at least:
+        // - 8 characters
+        // - 1 uppercase
+        // - 1 lowercase
+        // - 1 number
+        let regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[A-Za-z\\d]{8,}"
+        let isMatched = NSPredicate(format:"SELF MATCHES %@", regex).evaluate(with: passwordTextField.text)
+        if !isMatched {
+            failureHandler(message: "Passwords must be at least 8 character and have at least one uppercase letter, one lowercase letter, and one number.")
             return
         }
         
-        if ageTextField.text != "" && Int64(ageTextField.text!) != 0 {
-            newAthlete.age = Int64(ageTextField.text!)!
+        // Checks that a valid name has been entered
+        // - Must have first and last
+        if firstNameTextField.text == "" {
+            failureHandler(message: "Please enter your name.")
+            return
         }
-        else {
-            failureHandler2()
+        var lastName: String = ""
+        var firstName: String = ""
+        let nameTrimmed = firstNameTextField.text!.trimmingCharacters(in: .whitespaces)
+        let nameSplit = nameTrimmed.split(separator: " ", maxSplits: 1, omittingEmptySubsequences: true)
+        
+        if nameSplit.count == 1 {
+            failureHandler(message: "Please enter a last name.")
+            return
+        }
+        if nameSplit.count != 2 {
+            failureHandler(message: "Please enter your name as 'First Last'.")
+            return
+        }
+        firstName = String(nameSplit[0])
+        lastName = String(nameSplit[1])
+        
+        // Checks date of birth
+        if dateOfBirth.text == "" && Int(dateOfBirth.text!) == 0 {
+            failureHandler(message: "Please select your birth of date.")
             return
         }
         
-        if positionTextField.text != "" {
-            newAthlete.position = positionTextField.text!
-        }
-        else {
-            failureHandler2()
-            return
-        }
+        // Prepares request and sends create user request
+        let userInfo = ["email": emailTextField.text!,
+                        "password": passwordTextField.text!,
+                        "first": firstName,
+                        "last": lastName,
+                        "dateBirth": dateToString(date: tempDate),
+                        "days" : "2",
+                        "recieve": "true"]
         
-        newAthlete.recieve_latest = Int64(NSNumber(value:recieveLatestSwitch.isOn))
-        
-        createUser(user: newAthlete, success: successHandler, failure: failureHandler)
+        createUser(user: userInfo, success: successHandler, failure: failureHandler)
     }
 
-    func failureHandler2() -> Void {
-        DispatchQueue.main.async(){
-            self.spinner.stopAnimating()
-            self.present(self.alert2, animated: true)
-        }
-        print("Data Entry Failure")
-    }
-
-    func failureHandler() -> Void {
-        DispatchQueue.main.async(){
-            self.spinner.stopAnimating()
+    // Upon failure, display an error message
+    func failureHandler(message: String) -> Void {
+        
+        // Create the alert
+        alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            self.indicator.removeBackground()
+        }))
+        
+        // Remove the spinner and present the alert
+        DispatchQueue.main.async {
+            self.indicator.removeSpinner()
             self.present(self.alert, animated: true)
-         }
-        print("Create User Failure")
+        }
     }
 
+    // Upon success, remove the spinner and dismiss to the logged in view
     func successHandler() -> Void {
-        DispatchQueue.main.async(){
-            self.spinner.stopAnimating()
-            self.progressContainer.removeFromSuperview()
+        
+        // Remove the spinner and dismiss the page
+        DispatchQueue.main.async {
+            self.indicator.removeIndicator()
+            self.dismiss(animated: true, completion: nil)
         }
-        self.dismiss(animated: true, completion: nil)
-        print("Create User Success")
     }
 }
